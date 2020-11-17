@@ -20,4 +20,5 @@ public class JPAUtil {
 	public static Object getPrimarykey(Object entity) {
 		return factory.getPersistenceUnitUtil().getIdentifier(entity);
 	}
+	
 }
