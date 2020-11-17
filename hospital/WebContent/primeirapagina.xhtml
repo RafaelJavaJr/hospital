@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<title>Primeira Pagina</title>
+</head>
+<h:body>
+	<p>Seja bem vindo</p>
+
+	<h:form id="formPessoa">
+		<h:outputText value="Nome" />
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText>
+
+		<br/>		
+		<h:outputText value="Sobreome" />
+		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}">
+		</h:inputText>
+	</h:form>
+</h:body>
+</html>
