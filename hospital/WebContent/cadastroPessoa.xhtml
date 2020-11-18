@@ -3,50 +3,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
-<head>
-<title>Cadastro de Usuário</title>
-</head>
+<h:head>
+	<title>Cadastro de Usuários</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="estilo.css" library="css" />
+</h:head>
 <h:body>
-	<p>Seja bem vindo</p>
-	<h:form id="formPessoa">
+	
 
-		<h:panelGrid columns="2">
-			<f:facet name="header">
-				<h:outputText value="Cadastro De usuário" />
-			</f:facet>
+	<div class="form-style-10">
+		<h1>
+			<span>Cadastro de Usuário</span>
+		</h1>
+		<h:form id="formPessoa">
+			<div class="section">
+				<span>1</span>Primeiro Nome e Sobrenome
+			</div>
+			<div class="inner-wrap">
+				<label>Primeiro Nome <h:inputText value="#{pessoaBean.pessoa.nome}" /></label> 
+				<label>Sobrenome <h:inputText value="#{pessoaBean.pessoa.sobrenome}" /></label>
+			</div>
 
-			<h:outputLabel value="Id:" />
-			<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true" />
+			<div class="section">
+				<span>1</span>Conselho Regional
+			</div>
+			<div class="inner-wrap">				
+				<label>Perfil
+				<h:selectOneMenu id="campoPerfil" value="#{pessoaBean.pessoa.perfil}" required="false">
+					<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
+					<f:selectItem itemValue="ADMINISTRATIVO" itemLabel="Administrativo" />
+					<f:selectItem itemValue="ENFERMEIRO" itemLabel="Enfermeiro" />
+					<f:selectItem itemValue="MEDICO" itemLabel="Médico" />
+					<f:selectItem itemValue="ORTOPEDISTA" itemLabel="Ortopedista" />
+				</h:selectOneMenu>
+				</label> 
+				<label>Número do conselho<h:inputText value="#{pessoaBean.pessoa.nconselho}" /></label>
+			</div>
 
-			<h:outputLabel value="Nome:" />
-			<h:inputText value="#{pessoaBean.pessoa.nome}" />
-
-			<h:outputLabel value="Sobrenome:" />
-			<h:inputText value="#{pessoaBean.pessoa.sobrenome}" />
-
-			<h:outputLabel value="Login:" />
-			<h:inputText value="#{pessoaBean.pessoa.login}" />
-
-			<h:outputLabel value="Senha:" />
-			<h:inputSecret value="#{pessoaBean.pessoa.senha}" />
-
-
-			<h:outputLabel value="Número do Conselho:" />
-			<h:inputText value="#{pessoaBean.pessoa.nconselho}" />
-
-			<h:outputLabel value="Perfil:" />
-
-			<h:selectOneMenu id="campoPerfil" value="#{pessoaBean.pessoa.perfil}"
-				required="false">
-				<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
-				<f:selectItem itemValue="ADMINISTRATIVO" itemLabel="Administrativo" />
-				<f:selectItem itemValue="ENFERMEIRO" itemLabel="Enfermeiro" />
-				<f:selectItem itemValue="MEDICO" itemLabel="Médico" />
-				<f:selectItem itemValue="ORTOPEDISTA" itemLabel="Ortopedista" />
-			</h:selectOneMenu>
-
-			<h:outputLabel />
-			<h:panelGroup>
+			<div class="section">
+				<span>3</span>Senhas
+			</div>
+			<div class="inner-wrap">								
+				<label>Login<h:inputText value="#{pessoaBean.pessoa.login}" /></label> 
+				<label>Senha<h:inputText value="#{pessoaBean.pessoa.senha}" /></label>
+			</div>
+			<div class="button-section">
+				<input type="submit" name="Novo" value="Novo" />
+				<input type="submit" name="Salvar" />
+				<input type="submit" name="Excluir" />
+				<input type="submit" name="Limpar" />
 				<h:commandButton value="Novo" action="#{pessoaBean.novo}"
 					image="/resources/img/newUser.png" title="Novo" />
 				<h:commandButton style="margin-left:1cm;" value="Salvar"
@@ -57,9 +62,11 @@
 					title="Remover" />
 				<h:commandButton style="margin-left:1cm;" value="Limpar"
 					type="reset" image="/resources/img/limpar.png" title="Limpar" />
-			</h:panelGroup>
+				
+			</div>
+		</h:form>
+	</div>
 
-		</h:panelGrid>
 
 
 		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3"
@@ -104,7 +111,6 @@
 			</h:column>
 
 		</h:dataTable>
-	</h:form>
 
 </h:body>
 </html>

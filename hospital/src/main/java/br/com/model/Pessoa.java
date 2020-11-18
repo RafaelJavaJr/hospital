@@ -1,14 +1,12 @@
 package br.com.model;
 
 
-import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-@ManagedBean(name="pessoaBean")
 public class Pessoa {
 	
 	@Id
