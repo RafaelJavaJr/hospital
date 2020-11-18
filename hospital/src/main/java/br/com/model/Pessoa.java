@@ -21,15 +21,23 @@ public class Pessoa {
 	private String perfil;
 	private Long nconselho;
 
-	public Pessoa(){
-		
-	}
-	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
 	}
 	public String getLogin() {
 		return login;
@@ -49,17 +57,14 @@ public class Pessoa {
 	public void setPerfil(String perfil) {
 		this.perfil = perfil;
 	}
-	public String getNome() {
-		return nome;
+	public Long getNconselho() {
+		return nconselho;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNconselho(Long nconselho) {
+		this.nconselho = nconselho;
 	}
-	public String getSobrenome() {
-		return sobrenome;
-	}
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public Pessoa(){
+		
 	}
 	@Override
 	public String toString() {

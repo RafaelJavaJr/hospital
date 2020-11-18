@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import br.com.bean.PessoaBean;
+import br.com.model.Pessoa;
 import br.com.dao.DaoGeneric;
 import br.com.dao.DaoGeneric;
 
@@ -12,9 +12,9 @@ public class TesteHibernate {
 	
 	@Test
 	public void testeHibernate() {
-		DaoGeneric<PessoaBean> daoGeneric = new DaoGeneric<PessoaBean>();
+		DaoGeneric<Pessoa> daoGeneric = new DaoGeneric<Pessoa>();
 		
-		PessoaBean pessoa = new PessoaBean();
+		Pessoa pessoa = new Pessoa();
 		
 		pessoa.setLogin("rafael");
 		pessoa.setNome("Rafael");
@@ -28,9 +28,9 @@ public class TesteHibernate {
 	@Test
 	public void testeBuscar() {
 		//HibernateUtil.getEntityManager();
-		DaoGeneric<PessoaBean> daoGenerico = new DaoGeneric<PessoaBean>();
+		DaoGeneric<Pessoa> daoGenerico = new DaoGeneric<Pessoa>();
 		
-		PessoaBean pessoa = new PessoaBean();
+		Pessoa pessoa = new Pessoa();
 		
 		pessoa.setId(3l);
 		
@@ -43,18 +43,18 @@ public class TesteHibernate {
 	@Test
 	public void testeBuscar2() {
 		//HibernateUtil.getEntityManager();
-		DaoGeneric<PessoaBean> daoGenerico = new DaoGeneric<PessoaBean>();
+		DaoGeneric<Pessoa> daoGenerico = new DaoGeneric<Pessoa>();
 		
-		PessoaBean pessoa = daoGenerico.pesquisar(4L, PessoaBean.class);
+		Pessoa pessoa = daoGenerico.pesquisar(4L, Pessoa.class);
 		
 		System.out.println(pessoa);
 	}
 	@Test
 	public void testeUpdate() {
 		//HibernateUtil.getEntityManager();
-		DaoGeneric<PessoaBean> daoGenerico = new DaoGeneric<PessoaBean>();
+		DaoGeneric<Pessoa> daoGenerico = new DaoGeneric<Pessoa>();
 		
-		PessoaBean pessoa = daoGenerico.pesquisar(5L, PessoaBean.class);
+		Pessoa pessoa = daoGenerico.pesquisar(5L, Pessoa.class);
 		
 		pessoa.setNome("Nome Atualizado");
 		
@@ -66,9 +66,9 @@ public class TesteHibernate {
 	@Test
 	public void testeDelete() {
 		//HibernateUtil.getEntityManager();
-		DaoGeneric<PessoaBean> daoGenerico = new DaoGeneric<PessoaBean>();
+		DaoGeneric<Pessoa> daoGenerico = new DaoGeneric<Pessoa>();
 		
-		PessoaBean pessoa = daoGenerico.pesquisar(5L, PessoaBean.class);
+		Pessoa pessoa = daoGenerico.pesquisar(5L, Pessoa.class);
 		
 		daoGenerico.deletarProId(pessoa);
 		
@@ -78,15 +78,15 @@ public class TesteHibernate {
 	@Test
 	public void testeConsultar() {
 		//HibernateUtil.getEntityManager();
-		DaoGeneric<PessoaBean> daoGenerico = new DaoGeneric<PessoaBean>();
+		DaoGeneric<Pessoa> daoGenerico = new DaoGeneric<Pessoa>();
 		
-		List<PessoaBean> list = daoGenerico.listar(PessoaBean.class);
+		List<Pessoa> list = daoGenerico.listar(Pessoa.class);
 		
-		for (PessoaBean pessoaBean : list) {
+		for (Pessoa pessoaBean : list) {
 			System.out.println(pessoaBean);
 			System.out.println("----------------------------------------");
 		}
-		PessoaBean pessoa = daoGenerico.pesquisar(3L, PessoaBean.class);
+		Pessoa pessoa = daoGenerico.pesquisar(3L, Pessoa.class);
 		
 		daoGenerico.deletarProId(pessoa);
 		
@@ -94,10 +94,10 @@ public class TesteHibernate {
 
 	@Test
 	public void testeQueryList() {
-		DaoGeneric<PessoaBean> daoGenerico = new DaoGeneric<PessoaBean>();
-		List<PessoaBean> list = daoGenerico.getEntityManager().createQuery(" from PessoaBean").getResultList();
+		DaoGeneric<Pessoa> daoGenerico = new DaoGeneric<Pessoa>();
+		List<Pessoa> list = daoGenerico.getEntityManager().createQuery(" from Pessoa").getResultList();
 		
-		for (PessoaBean usuarioPessoa : list) {
+		for (Pessoa usuarioPessoa : list) {
 			System.out.println(usuarioPessoa);
 		}
 	}
