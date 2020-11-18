@@ -72,5 +72,17 @@ public class DaoGeneric<E> {
 	public EntityManager getEntityManager() {
 		return entityManager;
 	}
+	public List<E> getListEntity(Class<E> entidade){
+		EntityManager entityManager = JPAUtil.getEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+		
+		List<E> retorno = entityManager.createQuery("from " + entidade.getName()).getResultList();
+		
+		entityTransaction.commit();
+		entityManager.close();
+		
+		return retorno;
+	}
 
 }

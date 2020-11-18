@@ -4,10 +4,9 @@ import java.util.List;
 
 import org.junit.Test;
 
+import br.com.bean.PessoaBean;
 import br.com.dao.DaoGeneric;
-import br.com.model.PessoaBean;
 import br.com.dao.DaoGeneric;
-import br.com.model.PessoaBean;
 
 public class TesteHibernate {
 	
@@ -21,7 +20,7 @@ public class TesteHibernate {
 		pessoa.setNome("Rafael");
 		pessoa.setSobrenome("Ferreira Lima");
 		pessoa.setSenha("rafael");
-		pessoa.setNivel("ADMINISTRATIVO");
+		pessoa.setPerfil("ADMINISTRATIVO");
 		
 		daoGeneric.salvar(pessoa);
 	}

@@ -1,5 +1,6 @@
 package br.com.model;
 
+
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @ManagedBean(name="pessoaBean")
-public class PessoaBean {
+public class Pessoa {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,8 +18,12 @@ public class PessoaBean {
 	private String sobrenome;
 	private String login;
 	private String senha;
-	private String nivel;
+	private String perfil;
+	private Long nconselho;
 
+	public Pessoa(){
+		
+	}
 	
 	public Long getId() {
 		return id;
@@ -38,11 +43,11 @@ public class PessoaBean {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getNivel() {
-		return nivel;
+	public String getPerfil() {
+		return perfil;
 	}
-	public void setNivel(String nivel) {
-		this.nivel = nivel;
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
 	}
 	public String getNome() {
 		return nome;
@@ -58,7 +63,7 @@ public class PessoaBean {
 	}
 	@Override
 	public String toString() {
-		return "PessoaBean [id=" + id + ", nome=" + nome + ", nivel=" + nivel + "]";
+		return "PessoaBean [id=" + id + ", nome=" + nome + ", nivel=" + perfil + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -75,7 +80,7 @@ public class PessoaBean {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		PessoaBean other = (PessoaBean) obj;
+		Pessoa other = (Pessoa) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
