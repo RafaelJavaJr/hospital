@@ -9,14 +9,10 @@
 <h:body>
 	<p>Seja bem vindo</p>
 
-	<h:form id="formPessoa">
-		<h:outputText value="Nome" />
-		<h:inputText id="campoNome" value="#{pessoaBean.nome}"></h:inputText>
+	<h:panelGroup>
+		<h:commandLink value="cadastroPessoa.jsf" >oi</h:commandLink>
+		
+	</h:panelGroup>
 
-		<br/>		
-		<h:outputText value="Sobrenome" />
-		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}">
-		</h:inputText>
-	</h:form>
 </h:body>
 </html>

@@ -76,9 +76,9 @@ public class PessoaBean {
 			//adicionar o usuário na sessão usuarioLogado
 			FacesContext context = FacesContext.getCurrentInstance();
 			ExternalContext externalContext = context.getExternalContext();
-			externalContext.getSessionMap().put("usuarioLogado", pessoaUser);
+			externalContext.getSessionMap().put("usuarioLogado", pessoaUser.getLogin());
 
-			return "primeirapagina.jsf";
+			return "cadastroPessoa.jsf";
 		}
 		
 		return "index.jsf";

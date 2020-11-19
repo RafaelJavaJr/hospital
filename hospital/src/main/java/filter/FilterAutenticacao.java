@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import br.com.jpautil.JPAUtil;
+import br.com.model.Pessoa;
 
 @WebFilter(urlPatterns={"/*"})
 public class FilterAutenticacao implements Filter {
