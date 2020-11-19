@@ -55,7 +55,7 @@
 			</div>
 			<div class="inner-wrap">
 				<label>Login<h:inputText value="#{pessoaBean.pessoa.login}" /></label>
-				<label>Senha<h:inputText value="#{pessoaBean.pessoa.senha}" /></label>
+				<label>Senha<h:inputSecret value="#{pessoaBean.pessoa.senha}" /></label>
 			</div>
 			<div class="button-section">
 				<h:commandButton value="Novo" action="#{pessoaBean.novo}"
@@ -67,11 +67,11 @@
 			</div>
 		</h:form>
 	</div>
-
+<br/>
 
 <h:form>
 	<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3"
-		cellpadding="6">
+		cellpadding="6" width="100%">
 
 		<f:facet name="header">
 	     	   Lista usuário cadastrados
@@ -90,6 +90,21 @@
 		<h:column>
 			<f:facet name="header">Sobrenome da pessoa</f:facet>
 			<h:outputText value="#{pessoa.sobrenome}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Perfil</f:facet>
+			<h:outputText value="#{pessoa.perfil}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Login</f:facet>
+			<h:outputText value="#{pessoa.login}" />
+		</h:column>
+
+		<h:column>
+			<f:facet name="header">Senha</f:facet>
+			<h:outputText value="#{pessoa.senha}" />
 		</h:column>
 
 		<h:column>
@@ -113,11 +128,7 @@
 
 	</h:dataTable>
 	
-
-</h:form>		
-
-
-</h:body>
+</h:form></h:body>
 
 
 </html>
