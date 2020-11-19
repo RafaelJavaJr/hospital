@@ -7,9 +7,17 @@
 	<title>Cadastro de Usuários</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<h:outputStylesheet name="estilo.css" library="css" />
+
+	<h:outputStylesheet name="dataTable.css" library="css" />
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script
+		src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+
 </h:head>
 <h:body>
-	
+
 
 	<div class="form-style-10">
 		<h1>
@@ -20,97 +28,96 @@
 				<span>1</span>Primeiro Nome e Sobrenome
 			</div>
 			<div class="inner-wrap">
-				<label>Primeiro Nome <h:inputText value="#{pessoaBean.pessoa.nome}" /></label> 
-				<label>Sobrenome <h:inputText value="#{pessoaBean.pessoa.sobrenome}" /></label>
+				<label>Primeiro Nome <h:inputText
+						value="#{pessoaBean.pessoa.nome}" /></label> <label>Sobrenome <h:inputText
+						value="#{pessoaBean.pessoa.sobrenome}" /></label>
 			</div>
 
 			<div class="section">
 				<span>1</span>Conselho Regional
 			</div>
-			<div class="inner-wrap">				
-				<label>Perfil
-				<h:selectOneMenu id="campoPerfil" value="#{pessoaBean.pessoa.perfil}" required="false">
-					<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
-					<f:selectItem itemValue="ADMINISTRATIVO" itemLabel="Administrativo" />
-					<f:selectItem itemValue="ENFERMEIRO" itemLabel="Enfermeiro" />
-					<f:selectItem itemValue="MEDICO" itemLabel="Médico" />
-					<f:selectItem itemValue="ORTOPEDISTA" itemLabel="Ortopedista" />
-				</h:selectOneMenu>
-				</label> 
-				<label>Número do conselho<h:inputText value="#{pessoaBean.pessoa.nconselho}" /></label>
+			<div class="inner-wrap">
+				<label>Perfil <h:selectOneMenu id="campoPerfil"
+						value="#{pessoaBean.pessoa.perfil}" required="false">
+						<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
+						<f:selectItem itemValue="ADMINISTRATIVO"
+							itemLabel="Administrativo" />
+						<f:selectItem itemValue="ENFERMEIRO" itemLabel="Enfermeiro" />
+						<f:selectItem itemValue="MEDICO" itemLabel="Médico" />
+						<f:selectItem itemValue="ORTOPEDISTA" itemLabel="Ortopedista" />
+					</h:selectOneMenu>
+				</label> <label>Número do conselho<h:inputText
+						value="#{pessoaBean.pessoa.nconselho}" /></label>
 			</div>
 
 			<div class="section">
 				<span>3</span>Senhas
 			</div>
-			<div class="inner-wrap">								
-				<label>Login<h:inputText value="#{pessoaBean.pessoa.login}" /></label> 
+			<div class="inner-wrap">
+				<label>Login<h:inputText value="#{pessoaBean.pessoa.login}" /></label>
 				<label>Senha<h:inputText value="#{pessoaBean.pessoa.senha}" /></label>
 			</div>
 			<div class="button-section">
-				<input type="submit" name="Novo" value="Novo" />
-				<input type="submit" name="Salvar" value="/ 			 >
-				<input type="submit" name="Excluir" value="/>
-				<input type="submit" name="Limpar" value="/>
 				<h:commandButton value="Novo" action="#{pessoaBean.novo}"
-					image="/resources/img/newUser.png" title="Novo" />
+					title="Novo" />
 				<h:commandButton style="margin-left:1cm;" value="Salvar"
-					action="#{pessoaBean.salvar}" image="/resources/img/salvar.png"
-					title="Salvar" />
-				<h:commandButton style="margin-left:1cm;" value="Remove"
-					action="#{pessoaBean.remove}" image="/resources/img/excluir.png"
-					title="Remover" />
-				<h:commandButton style="margin-left:1cm;" value="Limpar"
-					type="reset" image="/resources/img/limpar.png" title="Limpar" />
-				
+					action="#{pessoaBean.salvar}" title="Salvar" />
+				<h:commandButton style="margin-left:1cm;" value="Remover"
+					action="#{pessoaBean.remove}" title="Remover" />
 			</div>
 		</h:form>
 	</div>
 
 
+<h:form>
+	<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3"
+		cellpadding="6">
 
-		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3"
-			cellpadding="6">
-
-			<f:facet name="header">
+		<f:facet name="header">
 	     	   Lista usuário cadastrados
 	     	</f:facet>
 
-			<h:column>
-				<f:facet name="header">ID</f:facet>
-				<h:outputText value="#{pessoa.id}" />
-			</h:column>
+		<h:column>
+			<f:facet name="header">ID</f:facet>
+			<h:outputText value="#{pessoa.id}" />
+		</h:column>
 
-			<h:column>
-				<f:facet name="header">Nome da pessoa</f:facet>
-				<h:outputText value="#{pessoa.nome}" />
-			</h:column>
+		<h:column>
+			<f:facet name="header">Nome da pessoa</f:facet>
+			<h:outputText value="#{pessoa.nome}" />
+		</h:column>
 
-			<h:column>
-				<f:facet name="header">Sobrenome da pessoa</f:facet>
-				<h:outputText value="#{pessoa.sobrenome}" />
-			</h:column>
+		<h:column>
+			<f:facet name="header">Sobrenome da pessoa</f:facet>
+			<h:outputText value="#{pessoa.sobrenome}" />
+		</h:column>
 
-			<h:column>
-				<f:facet name="header">Editar</f:facet>
-				<h:commandLink title="Editar">
-					<h:graphicImage value="/resources/img/editar.png" />
-					<f:setPropertyActionListener target="#{pessoaBean.pessoa}"
-						value="#{pessoa}" />
-				</h:commandLink>
-			</h:column>
+		<h:column>
+			<f:facet name="header">Editar</f:facet>
+			<h:commandLink title="Editar">
+				<h:graphicImage value="/resources/img/editar.png" />
+				<f:setPropertyActionListener target="#{pessoaBean.pessoa}"
+					value="#{pessoa}" />
+			</h:commandLink>
+		</h:column>
 
 
-			<h:column>
-				<f:facet name="header">Excluir</f:facet>
-				<h:commandLink action="#{pessoaBean.remove}" title="Excluir">
-					<f:setPropertyActionListener target="#{pessoaBean.pessoa}"
-						value="#{pessoa}" />
-					<h:graphicImage value="/resources/img/excluir.png" />
-				</h:commandLink>
-			</h:column>
+		<h:column>
+			<f:facet name="header">Excluir</f:facet>
+			<h:commandLink action="#{pessoaBean.remove}" title="Excluir">
+				<f:setPropertyActionListener target="#{pessoaBean.pessoa}"
+					value="#{pessoa}" />
+				<h:graphicImage value="/resources/img/excluir.png" />
+			</h:commandLink>
+		</h:column>
 
-		</h:dataTable>
+	</h:dataTable>
+	
+
+</h:form>		
+
 
 </h:body>
+
+
 </html>
