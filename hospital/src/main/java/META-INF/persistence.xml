@@ -3,6 +3,8 @@
 	<persistence-unit name="hospital" transaction-type="RESOURCE_LOCAL">
 		
 		<class>br.com.model.Pessoa</class>		
+		<class>br.com.model.Paciente</class>		
+		
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:postgresql://localhost:5432/hospital" />

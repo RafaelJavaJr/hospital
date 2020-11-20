@@ -36,7 +36,7 @@ public class PessoaBean {
 	}
 	
 	public String remove(){
-		//daoGeneric.deletarProId(pessoa);
+		daoGeneric.deletarProId(pessoa);
 		pessoa = new Pessoa();
 		carregarPessoas();
 		return "";

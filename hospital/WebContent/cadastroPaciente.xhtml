@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<title>Cadastro de Usuários</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="estilo.css" library="css" />	
+
+</h:head>
+<h:body>
+
+	<h:form>
+		<h:commandLink action="primeirapagina" style="margin-left:1cm;">
+			<h:graphicImage value="resources/img/home.jpg" />
+		</h:commandLink>
+		<h:commandLink action="index" style="margin-left:1cm;">
+			<h:graphicImage value="resources/img/excluir.png" />
+		</h:commandLink>
+	</h:form>
+	<br />
+	<br />
+	<div class="form-style-10">
+		<h1>
+			<span>Cadastro de Paciente</span>
+		</h1>
+
+		<h:form id="formPaciente">
+			<div class="section">
+				<span>1</span>Informações Pessoais
+			</div>
+			<div class="inner-wrap">
+				<label>Identificador 
+					<h:inputText value="#{pacienteBean.paciente.id}" />
+				</label> 
+				<label>Nome Completo 
+					<h:inputText value="#{pacienteBean.paciente.nome}" />
+				</label> 
+				<label>Naturalidade
+					<h:inputText value="#{pacienteBean.paciente.naturalidade}" />
+				</label>
+				<label>Sexo 
+					<h:selectOneMenu id="campoSexo" value="#{pacienteBean.paciente.sexo}" required="false">
+						<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
+						<f:selectItem itemValue="MASCULINO"	itemLabel="Masculino" />
+						<f:selectItem itemValue="FEMININO" itemLabel="Feminino" />
+					</h:selectOneMenu>
+				</label> 	 
+				<label>Data de Nascimento
+					<h:inputText value="#{pacienteBean.paciente.dtNascimento}" />
+				</label>
+			</div>
+			
+			<div class="section">
+				<span>1</span>Especificações
+			</div>
+			<div class="inner-wrap">
+				<label>Cadastro Único
+					<h:inputText value="#{pacienteBean.paciente.cadastroUnico}" />
+				</label> 
+				<label>Cor 
+					<h:selectOneMenu id="campoCor" value="#{pacienteBean.paciente.cor}" required="false">
+						<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
+						<f:selectItem itemValue="BRANCO"	itemLabel="Branco" />
+						<f:selectItem itemValue="PRETO" itemLabel="Preto" />
+						<f:selectItem itemValue="PARDO" itemLabel="Pardo" />
+						<f:selectItem itemValue="AMARELO" itemLabel="Amarelo" />
+					</h:selectOneMenu>
+				</label>				
+				<label>Cidade de Nascimento
+					<h:inputText value="#{pacienteBean.paciente.cidadeNascimento}" />
+				</label>
+				<label>Nome da Mãe
+					<h:inputText value="#{pacienteBean.paciente.nomeMae}" />
+				</label> 
+				<label>Nome do Pai
+					<h:inputText value="#{pacienteBean.paciente.nomePai}" />
+				</label>
+			</div>
+
+			<div class="section">
+				<span>1</span>Endereço
+			</div>
+			<div class="inner-wrap">
+				<label>Pais
+					<h:inputText value="#{pacienteBean.paciente.pais}" />
+				</label> 
+				<label>Município
+					<h:inputText value="#{pacienteBean.paciente.municipio}" />
+				</label> 
+				<label>Logradouro
+					<h:inputText value="#{pacienteBean.paciente.logradouro}" />
+				</label>
+				<label>Número
+					<h:inputText value="#{pacienteBean.paciente.numero}" />
+				</label> 
+				<label>Bairro
+					<h:inputText value="#{pacienteBean.paciente.bairro}" />
+				</label>
+				<label>CEP
+					<h:inputText value="#{pacienteBean.paciente.CEP}" />
+				</label>
+			</div>
+					
+			<div class="section">
+				<span>1</span>Contato
+			</div>
+
+			<div class="inner-wrap">
+				<label>Telefone 1
+					<h:inputText value="#{pacienteBean.paciente.telefone1}" />
+				</label> 
+				<label>Telefone 2
+					<h:inputText value="#{pacienteBean.paciente.telefone2}" />
+				</label> 				
+				<label>Telefone Para Recado
+					<h:inputText value="#{pacienteBean.paciente.telefoneRecado}" />
+				</label> 
+				<label>Nome para Recado
+					<h:inputText value="#{pacienteBean.paciente.nomeParaRecado}" />
+				</label> 
+			</div>
+
+			<div class="section">
+				<span>1</span>Documentos
+			</div>
+			<div class="inner-wrap">
+				<label>Registro Geral
+					<h:inputText value="#{pacienteBean.paciente.RG}" />
+				</label> 
+				<label>CPF
+					<h:inputText value="#{pacienteBean.paciente.CPF}" />
+				</label> 				
+				<label>Cadastro Nacional do SUS
+					<h:inputText value="#{pacienteBean.paciente.CNS}" />
+				</label> 
+			</div>
+
+			<div class="section">
+				<span>1</span>Informações Adicionais
+			</div>
+
+			<div class="inner-wrap">
+				<label>Unidade de Saúde
+					<h:inputText value="#{pacienteBean.paciente.unidadeDeSaude}" />
+				</label> 
+				<label>Situação Familiar
+					<h:inputText value="#{pacienteBean.paciente.situacaoFamiliar}" />
+				</label> 				
+			</div>
+
+			<div class="section">
+				<span>1</span>Educação
+			</div>
+
+			<div class="inner-wrap">
+				<label>Frequentou Escola
+					<h:inputText value="#{pacienteBean.paciente.frequentouEscola}" />
+				</label> 
+				<label>Grau de Escolaridade
+					<h:inputText value="#{pacienteBean.paciente.grauEscolaridade}" />
+				</label> 				
+			</div>
+			
+			<div class="section">
+				<span>1</span>Informações Trabalhistas
+			</div>
+
+			<div class="inner-wrap">
+				<label>Situaçao Trabalhista
+					<h:inputText value="#{pacienteBean.paciente.situacaoTrabalhista}" />
+				</label> 
+				<label>Cargo/Função
+					<h:inputText value="#{pacienteBean.paciente.cargo}" />
+				</label> 				
+			</div>
+
+			<div class="button-section">
+				<h:commandButton value="Novo" action="#{pacienteBean.novo}"
+					title="Novo" />
+				<h:commandButton style="margin-left:1cm;" value="Salvar"
+					action="#{pacienteBean.salvar}" title="Salvar" />
+				<h:commandButton style="margin-left:1cm;" value="Remover"
+					action="#{pacienteBean.remove}" title="Remover" />
+			</div>
+		</h:form>
+	</div>
+</h:body>
+
+
+</html>
