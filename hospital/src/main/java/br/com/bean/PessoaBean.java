@@ -76,14 +76,16 @@ public class PessoaBean {
 			//adicionar o usuário na sessão usuarioLogado
 			FacesContext context = FacesContext.getCurrentInstance();
 			ExternalContext externalContext = context.getExternalContext();
-			externalContext.getSessionMap().put("usuarioLogado", pessoaUser.getLogin());
-
-			return "cadastroPessoa.jsf";
+			externalContext.getSessionMap().put("usuarioLogado", pessoaUser);
+			System.out.println("primeirapagina.jsf");
+			return "primeirapagina.jsf";
 		}
-		
+		System.out.println("index.jsf");
 		return "index.jsf";
 	}
-	
+	/*uso o atributo render para definir os acessos de 
+	usuarios a determinadas partes do sistema
+	aula Mostrando e ocultando de acordo com o perfil do usuário, depoisdos 10 min*/ 
 	public boolean permiteAcesso(String acesso) {
 		FacesContext context = FacesContext.getCurrentInstance();
 		ExternalContext externalContext = context.getExternalContext();

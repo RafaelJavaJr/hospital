@@ -9,10 +9,20 @@
 <h:body>
 	<p>Seja bem vindo</p>
 
-	<h:panelGroup>
-		<h:commandLink value="cadastroPessoa.jsf" >oi</h:commandLink>
-		
-	</h:panelGroup>
+	<h:form>
+		<h:commandLink action="cadastroPessoa" style="margin-left:1cm;"> 
+			<h:graphicImage value="resources/img/ambulancia.jpg" />
+		</h:commandLink>
+		<h:commandLink  action="cadastroPessoa" style="margin-left:1cm;">
+			<h:graphicImage value="resources/img/paciente.jpg" />
+		</h:commandLink>
+		<h:commandLink action="cadastroPessoa" style="margin-left:1cm;"> 
+			<h:graphicImage value="resources/img/pessoas.png" />
+		</h:commandLink>
+		<h:commandLink  action="index" style="margin-left:1cm;">
+			<h:graphicImage value="resources/img/excluir.png" />
+		</h:commandLink>
+	</h:form>
 
 </h:body>
 </html>
