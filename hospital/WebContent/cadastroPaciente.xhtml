@@ -147,7 +147,15 @@
 					<h:inputText value="#{pacienteBean.paciente.unidadeDeSaude}" />
 				</label> 
 				<label>Situação Familiar
-					<h:inputText value="#{pacienteBean.paciente.situacaoFamiliar}" />
+					<h:selectOneMenu id="campoSituacaoFamiliar" value="#{pacienteBean.paciente.situacaoFamiliar}" required="false">
+						<f:selectItem itemLabel="[-Selecione-]" noSelectionOption="true" />
+						<f:selectItem itemValue="VIVE COM COMPANHEIRA(O) E FILHOS"	itemLabel="Vive com Companheira(o) e Filhos" />
+						<f:selectItem itemValue="VIVE COM COMPANHEIRA(O), COM LAÇOS CONJUGAIS SEM FILHOS"	itemLabel="Vive com Companheira(o), c/ Laços Conjugais s/ Filhos" />
+						<f:selectItem itemValue="VIVE COM COMPANHEIRA(O), FILHOS E OUTROS FAMILIARES"	itemLabel="Vive com Companheira(o), Filhos e Outros Familiares" />
+						<f:selectItem itemValue="VIVE COM FAMILIARES SEM COMPANHEIRA(O)"	itemLabel="Vive com Familiares sem Companheira(o)" />
+						<f:selectItem itemValue="VIVE COM OUTRAS PESSOAS SEM LAÇOS CONSANGUINEOS"	itemLabel="Vive com Outras Pessoas sem Laços Consanguíneos" />
+						<f:selectItem itemValue="VIVE SO"	itemLabel="Vive só" />
+					</h:selectOneMenu>
 				</label> 				
 			</div>
 
@@ -157,10 +165,43 @@
 
 			<div class="inner-wrap">
 				<label>Frequentou Escola
-					<h:inputText value="#{pacienteBean.paciente.frequentouEscola}" />
+					<h:selectOneMenu id="campoFrequentouEscola" value="#{pacienteBean.paciente.frequentouEscola}" required="false">
+						<f:selectItem itemValue="NUNCA FREQUENTOU"	itemLabel="Nunca Frequentou" />
+						<f:selectItem itemValue="SIM, ESCOLA PUBLICA"	itemLabel="Sim, Escola Pública" />
+						<f:selectItem itemValue="SIM, ESCOLA PARTICULAR"	itemLabel="Sim, Escola Particular" />
+						<f:selectItem itemValue="NÃO, JA FREQUENTOU ESCOLA PUBLICA"	itemLabel="Não, Já Frequentou Escola Pública" />
+						<f:selectItem itemValue="NÃO, JA FREQUENTOU ESCOLA PARTICULAR"	itemLabel="Não, Já Frequentou Escola Particular" />
+						<f:selectItem itemValue=""	itemLabel="" />
+					</h:selectOneMenu>
+					
 				</label> 
 				<label>Grau de Escolaridade
-					<h:inputText value="#{pacienteBean.paciente.grauEscolaridade}" />
+					<h:selectOneMenu id="campoGrauEscolaridade" value="#{pacienteBean.paciente.grauEscolaridade}" required="false">
+						<f:selectItem itemValue="ANALFABETO"	itemLabel="Analfabeto" />
+						<f:selectItem itemValue="ALFABETIZADO"	itemLabel="Sim, Escola Pública" />
+						<f:selectItem itemValue="CRECHE"	itemLabel="Sim, Escola Particular" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL I, 1º AO 5º ANO"	itemLabel="Não, Já Frequentou Escola Pública" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL II, 6º AO 9º ANO"	itemLabel="Não, Já Frequentou Escola Particular" />
+						<f:selectItem itemValue="ANALFABETO"	itemLabel="Analfabeto" />
+						<f:selectItem itemValue="ALFABETIZADO"	itemLabel="Sim, Escola Pública" />
+						<f:selectItem itemValue="CRECHE"	itemLabel="Sim, Escola Particular" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL I, 1º AO 5º ANO"	itemLabel="Não, Já Frequentou Escola Pública" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL II, 6º AO 9º ANO"	itemLabel="Não, Já Frequentou Escola Particular" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL COMPLETO"	itemLabel="Analfabeto" />
+						<f:selectItem itemValue="ENSINO MEDIO INCOMPLETO"	itemLabel="Sim, Escola Pública" />
+						<f:selectItem itemValue="ENSINO MEDIO COMPLETO"	itemLabel="Sim, Escola Particular" />
+						<f:selectItem itemValue="ESPECIALIZACAO"	itemLabel="Não, Já Frequentou Escola Pública" />
+						<f:selectItem itemValue="MESTRADO"	itemLabel="Não, Já Frequentou Escola Particular" />
+						<f:selectItem itemValue="DOUTORADO"	itemLabel="Analfabeto" />
+						<f:selectItem itemValue="PRE-ESCOLA"	itemLabel="Sim, Escola Pública" />
+						<f:selectItem itemValue="CLASSE DE ALFABETIZAÇÃO"	itemLabel="Sim, Escola Particular" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL ESPECIAL"	itemLabel="Não, Já Frequentou Escola Pública" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL EJA 1º AO 5º ANO"	itemLabel="Não, Já Frequentou Escola Particular" />
+						<f:selectItem itemValue="ENSINO FUNDAMENTAL EJA 6º AO 9º ANO"	itemLabel="Sim, Escola Pública" />
+						<f:selectItem itemValue="ENSINO MEDIO ESPECIAL"	itemLabel="Sim, Escola Particular" />
+						<f:selectItem itemValue="ENSINO MEDIO EJA"	itemLabel="Não, Já Frequentou Escola Pública" />
+						<f:selectItem itemValue="ALFABETIZACAO PARA ADULTOS (MOBRAL, ETC)"	itemLabel="Não, Já Frequentou Escola Particular" />
+					</h:selectOneMenu>
 				</label> 				
 			</div>
 			

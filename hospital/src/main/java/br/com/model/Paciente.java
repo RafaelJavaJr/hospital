@@ -57,6 +57,14 @@ public class Paciente {
 	private String cargo;
 	private String ativo;
 
+	public String getAtivo() {
+		return ativo;
+	}
+	
+	public void setAtivo(String ativo) {
+		this.ativo = ativo;
+	}
+	
 	public Long getId() {
 		return id;
 	}
